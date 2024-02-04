@@ -17,3 +17,7 @@ def add_user(user_id):
         return
     return users.insert_one({"user_id": str(user_id)})
   
+def all_users():
+    user = users.find({})
+    usrs = len(list(user))
+    return usrs
